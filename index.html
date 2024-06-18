@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño e Implementación de una Función en C++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diseño e Implementación de una Función en C++</h1>
+        <p>En esta página, explicaremos el proceso completo de diseño e implementación de una función en C++. Como ejemplo, implementaremos una función que calcula el factorial de un número.</p>
+        
+        <h2>Introducción</h2>
+        <p>El factorial de un número n (denotado como n!) es el producto de todos los enteros positivos desde 1 hasta n. Por ejemplo, 5! = 5 × 4 × 3 × 2 × 1 = 120.</p>
+        
+        <h2>Diseño de la Función</h2>
+        <p>Antes de implementar la función, es importante definir su propósito, parámetros, tipo de retorno y posibles casos especiales.</p>
+        <ul>
+            <li><strong>Propósito:</strong> Calcular el factorial de un número entero no negativo.</li>
+            <li><strong>Parámetros:</strong> Un entero <code>n</code>.</li>
+            <li><strong>Tipo de Retorno:</strong> Un entero que representa el factorial de <code>n</code>.</li>
+            <li><strong>Casos Especiales:</strong> El factorial de 0 es 1 por definición.</li>
+        </ul>
+        
+        <h2>Implementación en C++</h2>
+        <p>A continuación se muestra el código de la función en C++:</p>
+        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int factorial(int n) {
+    if (n < 0) {
+        cout &lt;&lt; "Error: El número debe ser no negativo." &lt;&lt; endl;
+        return -1;
+    }
+    if (n == 0) {
+        return 1;
+    }
+    int result = 1;
+    for (int i = 1; i &lt;= n; ++i) {
+        result *= i;
+    }
+    return result;
+}
+
+int main() {
+    int number;
+    cout &lt;&lt; "Introduce un número: ";
+    cin &lt;&lt; number;
+    int fact = factorial(number);
+    if (fact != -1) {
+        cout &lt;&lt; "El factorial de " &lt;&lt; number &lt;&lt; " es " &lt;&lt; fact &lt;&lt; endl;
+    }
+    return 0;
+}
+        </code></pre>
+        <p>Este código define una función <code>factorial</code> que calcula el factorial de un número entero no negativo.</p>
+        
+        <h2>Conclusión</h2>
+        <p>Hemos diseñado e implementado una función en C++ que calcula el factorial de un número. Este ejemplo ilustra cómo definir el propósito de la función, manejar casos especiales y estructurar el código en C++.</p>
+    </div>
+</body>
+</html>
